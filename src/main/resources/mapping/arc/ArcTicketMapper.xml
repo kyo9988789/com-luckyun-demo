@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luckyun.demo.base.mapper.ArcTicketMapper">
+      
+    <select id="readAll" parameterType="com.luckyun.demo.base.entity.ArcTicket" 
+    	resultType="com.luckyun.demo.base.entity.ArcTicket">
+    	select * from arc_ticket a
+    		inner join arc_equip e on a.iequipid = e.indocno
+    		inner join sys_group g on a.igroupid = g.igroupid
+    </select>
+</mapper>
